@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D543FCC91B45C378001A4C09 /* Entry+Graphics.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCC81B45C378001A4C09 /* Entry+Graphics.m */; };
+		D543FCCC1B45DDFC001A4C09 /* Symbola.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D543FCCB1B45DDFC001A4C09 /* Symbola.ttf */; };
+		D543FCD21B45E500001A4C09 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D543FCD11B45E500001A4C09 /* Climacons.ttf */; };
+		D543FCD51B45E703001A4C09 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCD41B45E703001A4C09 /* Entry.m */; };
+		D543FCD91B45E7B4001A4C09 /* WeatherPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCD81B45E7B4001A4C09 /* WeatherPickerViewController.m */; };
+		D543FCDC1B45E925001A4C09 /* PickerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCDB1B45E925001A4C09 /* PickerCollectionViewCell.m */; };
+		D543FCE31B460383001A4C09 /* MoodPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCE21B460383001A4C09 /* MoodPickerViewController.m */; };
+		D543FCE61B46B7DC001A4C09 /* DayPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCE51B46B7DC001A4C09 /* DayPickerViewController.m */; };
+		D543FCEB1B471804001A4C09 /* EntryTextEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCEA1B471804001A4C09 /* EntryTextEditViewController.m */; };
+		D543FCEF1B48471C001A4C09 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D543FCEE1B48471C001A4C09 /* EntryViewController.m */; };
+		D5542DAC1B44A82E0020DADD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5542DAE1B44A82E0020DADD /* Localizable.strings */; };
+		D5542DB21B44ACA90020DADD /* EntryHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5542DB11B44ACA90020DADD /* EntryHistoryTableViewCell.m */; };
 		D55B61731B439B920039DDAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B61721B439B920039DDAE /* main.m */; };
 		D55B61761B439B920039DDAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B61751B439B920039DDAE /* AppDelegate.m */; };
 		D55B61791B439B920039DDAE /* Today.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D55B61771B439B920039DDAE /* Today.xcdatamodeld */; };
-		D55B617C1B439B920039DDAE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B617B1B439B920039DDAE /* MasterViewController.m */; };
-		D55B617F1B439B920039DDAE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B617E1B439B920039DDAE /* DetailViewController.m */; };
+		D55B617C1B439B920039DDAE /* EntryHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B617B1B439B920039DDAE /* EntryHistoryTableViewController.m */; };
 		D55B61821B439B920039DDAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55B61801B439B920039DDAE /* Main.storyboard */; };
 		D55B61841B439B920039DDAE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55B61831B439B920039DDAE /* Images.xcassets */; };
 		D55B61871B439B920039DDAE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55B61851B439B920039DDAE /* LaunchScreen.xib */; };
@@ -29,16 +40,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D543FCC71B45C378001A4C09 /* Entry+Graphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entry+Graphics.h"; sourceTree = "<group>"; };
+		D543FCC81B45C378001A4C09 /* Entry+Graphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entry+Graphics.m"; sourceTree = "<group>"; };
+		D543FCCB1B45DDFC001A4C09 /* Symbola.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Symbola.ttf; sourceTree = "<group>"; };
+		D543FCD11B45E500001A4C09 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
+		D543FCD31B45E703001A4C09 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		D543FCD41B45E703001A4C09 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		D543FCD71B45E7B4001A4C09 /* WeatherPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherPickerViewController.h; sourceTree = "<group>"; };
+		D543FCD81B45E7B4001A4C09 /* WeatherPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherPickerViewController.m; sourceTree = "<group>"; };
+		D543FCDA1B45E925001A4C09 /* PickerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerCollectionViewCell.h; sourceTree = "<group>"; };
+		D543FCDB1B45E925001A4C09 /* PickerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerCollectionViewCell.m; sourceTree = "<group>"; };
+		D543FCE11B460383001A4C09 /* MoodPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodPickerViewController.h; sourceTree = "<group>"; };
+		D543FCE21B460383001A4C09 /* MoodPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodPickerViewController.m; sourceTree = "<group>"; };
+		D543FCE41B46B7DC001A4C09 /* DayPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayPickerViewController.h; sourceTree = "<group>"; };
+		D543FCE51B46B7DC001A4C09 /* DayPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayPickerViewController.m; sourceTree = "<group>"; };
+		D543FCE91B471804001A4C09 /* EntryTextEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryTextEditViewController.h; sourceTree = "<group>"; };
+		D543FCEA1B471804001A4C09 /* EntryTextEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryTextEditViewController.m; sourceTree = "<group>"; };
+		D543FCED1B48471C001A4C09 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		D543FCEE1B48471C001A4C09 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
+		D5542DAD1B44A82E0020DADD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D5542DB01B44ACA90020DADD /* EntryHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryHistoryTableViewCell.h; sourceTree = "<group>"; };
+		D5542DB11B44ACA90020DADD /* EntryHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryHistoryTableViewCell.m; sourceTree = "<group>"; };
 		D55B616D1B439B920039DDAE /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55B61711B439B920039DDAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D55B61721B439B920039DDAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D55B61741B439B920039DDAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D55B61751B439B920039DDAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D55B61781B439B920039DDAE /* Today.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Today.xcdatamodel; sourceTree = "<group>"; };
-		D55B617A1B439B920039DDAE /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		D55B617B1B439B920039DDAE /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		D55B617D1B439B920039DDAE /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		D55B617E1B439B920039DDAE /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D55B617A1B439B920039DDAE /* EntryHistoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntryHistoryTableViewController.h; sourceTree = "<group>"; };
+		D55B617B1B439B920039DDAE /* EntryHistoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntryHistoryTableViewController.m; sourceTree = "<group>"; };
 		D55B61811B439B920039DDAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D55B61831B439B920039DDAE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D55B61861B439B920039DDAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -65,6 +95,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D543FCCA1B45DDDA001A4C09 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCCB1B45DDFC001A4C09 /* Symbola.ttf */,
+				D543FCD11B45E500001A4C09 /* Climacons.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D543FCD61B45E777001A4C09 /* Weather Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCD71B45E7B4001A4C09 /* WeatherPickerViewController.h */,
+				D543FCD81B45E7B4001A4C09 /* WeatherPickerViewController.m */,
+				D543FCDA1B45E925001A4C09 /* PickerCollectionViewCell.h */,
+				D543FCDB1B45E925001A4C09 /* PickerCollectionViewCell.m */,
+			);
+			name = "Weather Picker";
+			sourceTree = "<group>";
+		};
+		D543FCE01B460339001A4C09 /* Mood Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCE11B460383001A4C09 /* MoodPickerViewController.h */,
+				D543FCE21B460383001A4C09 /* MoodPickerViewController.m */,
+			);
+			name = "Mood Picker";
+			sourceTree = "<group>";
+		};
+		D543FCE71B4705B0001A4C09 /* Day Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCE41B46B7DC001A4C09 /* DayPickerViewController.h */,
+				D543FCE51B46B7DC001A4C09 /* DayPickerViewController.m */,
+			);
+			name = "Day Picker";
+			sourceTree = "<group>";
+		};
+		D543FCE81B4717CC001A4C09 /* Entry Text Edit */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCE91B471804001A4C09 /* EntryTextEditViewController.h */,
+				D543FCEA1B471804001A4C09 /* EntryTextEditViewController.m */,
+			);
+			name = "Entry Text Edit";
+			sourceTree = "<group>";
+		};
+		D543FCEC1B4846E8001A4C09 /* Entry View */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCED1B48471C001A4C09 /* EntryViewController.h */,
+				D543FCEE1B48471C001A4C09 /* EntryViewController.m */,
+			);
+			name = "Entry View";
+			sourceTree = "<group>";
+		};
+		D5542DAF1B44AC810020DADD /* Entry History */ = {
+			isa = PBXGroup;
+			children = (
+				D55B617A1B439B920039DDAE /* EntryHistoryTableViewController.h */,
+				D55B617B1B439B920039DDAE /* EntryHistoryTableViewController.m */,
+				D5542DB01B44ACA90020DADD /* EntryHistoryTableViewCell.h */,
+				D5542DB11B44ACA90020DADD /* EntryHistoryTableViewCell.m */,
+			);
+			name = "Entry History";
+			sourceTree = "<group>";
+		};
 		D55B61641B439B920039DDAE = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +183,16 @@
 		D55B616F1B439B920039DDAE /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				D543FCCA1B45DDDA001A4C09 /* Fonts */,
+				D5EB85471B44C76300A42017 /* Model */,
 				D55B61741B439B920039DDAE /* AppDelegate.h */,
 				D55B61751B439B920039DDAE /* AppDelegate.m */,
-				D55B617A1B439B920039DDAE /* MasterViewController.h */,
-				D55B617B1B439B920039DDAE /* MasterViewController.m */,
-				D55B617D1B439B920039DDAE /* DetailViewController.h */,
-				D55B617E1B439B920039DDAE /* DetailViewController.m */,
+				D543FCEC1B4846E8001A4C09 /* Entry View */,
+				D543FCE81B4717CC001A4C09 /* Entry Text Edit */,
+				D543FCE71B4705B0001A4C09 /* Day Picker */,
+				D543FCE01B460339001A4C09 /* Mood Picker */,
+				D543FCD61B45E777001A4C09 /* Weather Picker */,
+				D5542DAF1B44AC810020DADD /* Entry History */,
 				D55B61801B439B920039DDAE /* Main.storyboard */,
 				D55B61831B439B920039DDAE /* Images.xcassets */,
 				D55B61851B439B920039DDAE /* LaunchScreen.xib */,
@@ -106,6 +207,7 @@
 			children = (
 				D55B61711B439B920039DDAE /* Info.plist */,
 				D55B61721B439B920039DDAE /* main.m */,
+				D5542DAE1B44A82E0020DADD /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -125,6 +227,17 @@
 				D55B61911B439B920039DDAE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5EB85471B44C76300A42017 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D543FCD31B45E703001A4C09 /* Entry.h */,
+				D543FCD41B45E703001A4C09 /* Entry.m */,
+				D543FCC71B45C378001A4C09 /* Entry+Graphics.h */,
+				D543FCC81B45C378001A4C09 /* Entry+Graphics.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +320,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D543FCD21B45E500001A4C09 /* Climacons.ttf in Resources */,
+				D543FCCC1B45DDFC001A4C09 /* Symbola.ttf in Resources */,
 				D55B61821B439B920039DDAE /* Main.storyboard in Resources */,
+				D5542DAC1B44A82E0020DADD /* Localizable.strings in Resources */,
 				D55B61871B439B920039DDAE /* LaunchScreen.xib in Resources */,
 				D55B61841B439B920039DDAE /* Images.xcassets in Resources */,
 			);
@@ -227,11 +343,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55B617F1B439B920039DDAE /* DetailViewController.m in Sources */,
-				D55B617C1B439B920039DDAE /* MasterViewController.m in Sources */,
+				D543FCC91B45C378001A4C09 /* Entry+Graphics.m in Sources */,
+				D55B617C1B439B920039DDAE /* EntryHistoryTableViewController.m in Sources */,
+				D543FCE61B46B7DC001A4C09 /* DayPickerViewController.m in Sources */,
 				D55B61791B439B920039DDAE /* Today.xcdatamodeld in Sources */,
+				D543FCE31B460383001A4C09 /* MoodPickerViewController.m in Sources */,
+				D543FCD51B45E703001A4C09 /* Entry.m in Sources */,
+				D543FCEF1B48471C001A4C09 /* EntryViewController.m in Sources */,
 				D55B61761B439B920039DDAE /* AppDelegate.m in Sources */,
 				D55B61731B439B920039DDAE /* main.m in Sources */,
+				D543FCDC1B45E925001A4C09 /* PickerCollectionViewCell.m in Sources */,
+				D543FCEB1B471804001A4C09 /* EntryTextEditViewController.m in Sources */,
+				D5542DB21B44ACA90020DADD /* EntryHistoryTableViewCell.m in Sources */,
+				D543FCD91B45E7B4001A4C09 /* WeatherPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +378,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D5542DAE1B44A82E0020DADD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5542DAD1B44A82E0020DADD /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D55B61801B439B920039DDAE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -426,6 +558,7 @@
 				D55B61981B439B920039DDAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D55B61991B439B920039DDAE /* Build configuration list for PBXNativeTarget "TodayTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +567,7 @@
 				D55B619B1B439B920039DDAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

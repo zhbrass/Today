@@ -2,13 +2,11 @@
 //  AppDelegate.m
 //  Today
 //
-//  Created by Zachary Brass on 6/30/15.
 //  Copyright (c) 2015 zachbrass. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
-#import "MasterViewController.h"
+#import "EntryHistoryTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +18,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController *controller = (MasterViewController *)navigationController.topViewController;
+    UIColor *appThemeTurquoise = [UIColor colorWithRed:0.3 green:0.7 blue:0.7 alpha:1.0];
+    [[UINavigationBar appearance] setBarTintColor:appThemeTurquoise];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UIButton appearance] setTintColor:appThemeTurquoise];
+//  TODO: finish custom font
+    [[UINavigationBar appearance] setTitleTextAttributes:@{//NSFontAttributeName:[UIFont fontWithName:@"AvenirNextCondensed-Medium" size:24.0],
+                                                           NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    EntryHistoryTableViewController *controller = (EntryHistoryTableViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     return YES;
 }

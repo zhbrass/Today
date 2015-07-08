@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Today
+
+  Copyright (c) 2015 zachbrass. All rights reserved.
+*/
+
+"Today: %@" = "Today: %@";
+"Yesterday: %@" = "Yesterday: %@";
+
+"Entry List Title" = "Entry List";
+"New Entry" = "New Entry";
+"New Entry Day Prompt" = "Is this entry for today or yesterday?";
+"Weather Picker Title" = "What was the weather like?";
+"Mood Picker Title" = "How did you feel?";
+"Entry Text Edit Title" = "What did you do today?";

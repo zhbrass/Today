@@ -1,19 +1,20 @@
 //
-//  MasterViewController.m
+//  EntryHistoryTableViewController.m
 //  Today
 //
-//  Created by Zachary Brass on 6/30/15.
 //  Copyright (c) 2015 zachbrass. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
-
-@interface MasterViewController ()
+#import "EntryHistoryTableViewController.h"
+#import "EntryHistoryTableViewCell.h"
+#import "Entry+Graphics.h"
+#import "DayPickerViewController.h"
+#import "EntryViewController.h"
+@interface EntryHistoryTableViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation EntryHistoryTableViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -21,11 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.title = NSLocalizedString(@"Entry List Title", @"");
+    
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,15 +34,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+// Keeping around for testing purposes
 - (void)insertNewObject:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
-        
+    Entry *newEntry = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-        
+    newEntry.date = [NSDate date];
+    newEntry.moodIndex = @(1 + arc4random_uniform(5));
+    newEntry.weatherCharacter = @"!";
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
@@ -55,10 +59,17 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([segue.destinationViewController isKindOfClass:[EntryViewController class]]){
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
+        Entry *entryToShow = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        EntryViewController *destination = (EntryViewController *)segue.destinationViewController;
+        destination.entry = entryToShow;
+    } else if ([segue.destinationViewController isKindOfClass:[DayPickerViewController class]]) {
+        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
+        NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+        Entry *newEntry = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+        DayPickerViewController *destination = (DayPickerViewController *)segue.destinationViewController;
+        destination.entry = newEntry;
     }
 }
 
@@ -74,7 +85,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    EntryHistoryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -99,9 +110,28 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"timeStamp"] description];
+- (void)configureCell:(EntryHistoryTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    Entry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell setDate:entry.date];
+    cell.weatherLabel.text = entry.weatherCharacter;
+    cell.entryTextLabel.text = entry.entryText;
+    cell.moodLabel.text = entry.emojiForMood;
+
+    cell.moodLabel.layer.shadowOpacity = 1;
+    cell.moodLabel.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+    cell.moodLabel.layer.shadowRadius = 5.0;
+    NSInteger moodIndex = entry.moodIndex.integerValue;
+    if (moodIndex == 1) {
+        cell.moodLabel.layer.shadowColor = [UIColor redColor].CGColor;
+    } else if (moodIndex == 2) {
+        cell.moodLabel.layer.shadowColor = [UIColor colorWithRed:1.0 green:0.25 blue:0.0 alpha:1.0].CGColor;
+    } else if (moodIndex == 3) {
+        cell.moodLabel.layer.shadowColor = [UIColor orangeColor].CGColor;
+    } else if (moodIndex == 4) {
+        cell.moodLabel.layer.shadowColor = [UIColor colorWithRed:1.0 green:0.75 blue:0.0 alpha:1.0].CGColor;
+    } else if (moodIndex == 5) {
+        cell.moodLabel.layer.shadowColor = [UIColor yellowColor].CGColor;
+    }
 }
 
 #pragma mark - Fetched results controller
@@ -114,14 +144,14 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
     
     // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -181,7 +211,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(EntryHistoryTableViewCell *)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
