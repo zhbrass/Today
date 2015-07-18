@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -175,7 +175,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzp-zN-UKU">
                                 <rect key="frame" x="20" y="105.5" width="280" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -232,8 +232,50 @@
                                     <segue destination="fiv-yi-Jol" kind="show" id="T0v-Gd-mEW"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PdJ-vF-Gg2">
+                                <rect key="frame" x="0.0" y="400" width="320" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Gya-8r-eZ8"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lEd-Pf-IFM">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="leq-Ht-3Az" customClass="EntryPhotoCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="poS-uf-FUe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="poS-uf-FUe" secondAttribute="bottom" id="29r-fe-u5O"/>
+                                            <constraint firstItem="poS-uf-FUe" firstAttribute="leading" secondItem="leq-Ht-3Az" secondAttribute="leading" id="ShX-gl-iZk"/>
+                                            <constraint firstItem="poS-uf-FUe" firstAttribute="top" secondItem="leq-Ht-3Az" secondAttribute="top" id="WTu-wW-XXI"/>
+                                            <constraint firstAttribute="trailing" secondItem="poS-uf-FUe" secondAttribute="trailing" id="uM4-fE-FlO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="poS-uf-FUe" id="y60-lc-yhV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="giR-AH-psR" id="zJC-5B-xW5"/>
+                                    <outlet property="delegate" destination="giR-AH-psR" id="v4r-xW-pJ1"/>
+                                </connections>
+                            </collectionView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Foo Bar" translatesAutoresizingMaskIntoConstraints="NO" id="YR8-T9-BMy">
-                                <rect key="frame" x="0.0" y="126" width="320" height="354"/>
+                                <rect key="frame" x="0.0" y="126" width="320" height="274"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -247,20 +289,24 @@
                             <constraint firstAttribute="trailing" secondItem="2dd-hp-5MD" secondAttribute="trailing" constant="-1" id="BrN-qF-rnE"/>
                             <constraint firstItem="2dd-hp-5MD" firstAttribute="top" secondItem="eAM-xz-0Op" secondAttribute="bottom" constant="-1" id="CHw-qX-nDA"/>
                             <constraint firstItem="BEB-FH-Ik9" firstAttribute="width" secondItem="2dd-hp-5MD" secondAttribute="width" id="Jip-GS-xsl"/>
+                            <constraint firstItem="EUP-ld-wox" firstAttribute="top" secondItem="PdJ-vF-Gg2" secondAttribute="bottom" id="MhL-Ns-oDa"/>
                             <constraint firstItem="BEB-FH-Ik9" firstAttribute="height" secondItem="2dd-hp-5MD" secondAttribute="height" id="OKg-ZU-uQB"/>
                             <constraint firstItem="YR8-T9-BMy" firstAttribute="top" secondItem="2dd-hp-5MD" secondAttribute="bottom" id="R2Q-z7-Av8"/>
                             <constraint firstItem="BEB-FH-Ik9" firstAttribute="leading" secondItem="n9j-dt-6GR" secondAttribute="leading" constant="-1" id="SNi-Ix-qVc"/>
-                            <constraint firstItem="EUP-ld-wox" firstAttribute="top" secondItem="YR8-T9-BMy" secondAttribute="bottom" id="TO6-Ad-dft"/>
+                            <constraint firstAttribute="trailing" secondItem="PdJ-vF-Gg2" secondAttribute="trailing" id="SuQ-L7-hla"/>
                             <constraint firstItem="2dd-hp-5MD" firstAttribute="leading" secondItem="BEB-FH-Ik9" secondAttribute="trailing" id="Tye-om-MeI"/>
                             <constraint firstAttribute="trailing" secondItem="YR8-T9-BMy" secondAttribute="trailing" id="ZbJ-vG-qIs"/>
+                            <constraint firstItem="EUP-ld-wox" firstAttribute="top" secondItem="YR8-T9-BMy" secondAttribute="bottom" constant="80" id="gGN-I0-R8j"/>
                             <constraint firstItem="BEB-FH-Ik9" firstAttribute="top" secondItem="eAM-xz-0Op" secondAttribute="bottom" constant="-1" id="ihw-EL-tTr"/>
+                            <constraint firstItem="PdJ-vF-Gg2" firstAttribute="leading" secondItem="n9j-dt-6GR" secondAttribute="leading" id="uI1-Y5-oRo"/>
                             <constraint firstItem="YR8-T9-BMy" firstAttribute="leading" secondItem="n9j-dt-6GR" secondAttribute="leading" id="yOX-KT-oGS"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="entryTextView" destination="YR8-T9-BMy" id="AMU-A5-g4m"/>
                         <outlet property="moodButton" destination="2dd-hp-5MD" id="4xI-xu-TQV"/>
-                        <outlet property="textViewBottomLayoutConstraint" destination="TO6-Ad-dft" id="kGI-az-7R8"/>
+                        <outlet property="photosCollectionView" destination="PdJ-vF-Gg2" id="Aow-NO-jhH"/>
+                        <outlet property="textViewBottomLayoutConstraint" destination="gGN-I0-R8j" id="jSQ-qr-NLH"/>
                         <outlet property="weatherButton" destination="BEB-FH-Ik9" id="ufH-nd-6yy"/>
                         <outletCollection property="topButtons" destination="BEB-FH-Ik9" id="Tgf-0I-ENZ"/>
                         <outletCollection property="topButtons" destination="2dd-hp-5MD" id="PwO-sk-CVM"/>
@@ -496,7 +542,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="trb-FF-9L4"/>
         <segue reference="T0v-Gd-mEW"/>
+        <segue reference="yHn-tQ-Zhh"/>
     </inferredMetricsTieBreakers>
 </document>

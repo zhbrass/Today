@@ -1,0 +1,7 @@
+/* 
+  InfoPlist.strings
+  Today
+
+  Copyright (c) 2015 zachbrass. All rights reserved.
+*/
+NSPhotoLibraryUsageDescription = "Today can show you the photos you took on a given day below that day's entry";

@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 #import "EntryHistoryTableViewController.h"
-
+@import Photos;
 @interface AppDelegate ()
 
 @end
@@ -28,6 +28,9 @@
                                                            NSForegroundColorAttributeName:[UIColor whiteColor]}];
     EntryHistoryTableViewController *controller = (EntryHistoryTableViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        
+    }];
     return YES;
 }
 

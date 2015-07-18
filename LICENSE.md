@@ -1,6 +1,7 @@
+#Today License
 The MIT License (MIT)
 
-Copyright (c) 2015 zhbrass
+Copyright (c) 2015 Zach Brass
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,3 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+#Other licenses
+##<a href="http://adamwhitcroft.com/climacons/">Climacons</a> font
+You are free to use any of the Climacons Icons (the "icons") in any personal or commercial work without obligation of payment (monetary or otherwise) or attribution, however a credit for the work would be appreciated. <strong>Do not</strong> redistribute or sell and <strong>do not</strong> claim creative credit. Intellectual property rights are not transferred with the download of the icons.
